@@ -13,7 +13,7 @@ function UpdateUser() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/getUser/" + id)
+      .get(`${import.meta.env.VITE_REACT_APP_SERVER_URL}/getUser/` + id)
       .then((result) => {console.log(result)
         setName(result.data.name);
         setEmail(result.data.email);  
@@ -26,7 +26,7 @@ function UpdateUser() {
   const Update = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:8000/updateUser/" + id, {
+      .put(`${import.meta.env.VITE_REACT_APP_SERVER_URL}updateUser/ `+ id, {
         name,
         email,
         age,

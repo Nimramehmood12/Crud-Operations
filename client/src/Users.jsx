@@ -8,14 +8,14 @@ import { useEffect } from "react";
 function Users() {
   const [users, setUsers] = useState([]);
   useEffect(()=>{
-     axios.get('http://localhost:8000')
+     axios.get(`${import.meta.env.VITE_REACT_APP_SERVER_URL}`)
      .then(result=>setUsers(result.data))
      .catch(err=>console.error(err))
 
   },[])
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:8000/deleteUser/`+id)
+    axios.delete(`${import.meta.env.VITE_REACT_APP_SERVER_URL}deleteUser/`+id)
       .then(res => {console.log(res)
         window.location.reload()
       })

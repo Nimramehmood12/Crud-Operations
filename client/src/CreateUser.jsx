@@ -13,7 +13,7 @@ function CreateUser() {
   const Submit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/createUser", {
+      .post(`${import.meta.env.VITE_REACT_APP_SERVER_URL}/createUser`, {
         name,
         email,
         age,
