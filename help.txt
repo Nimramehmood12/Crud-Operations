@@ -1,0 +1,6 @@
+npm init
+npm init vite
+
+npm i bootstrap(designing) axios(access HTTP) react-router-dom(routing)
+
+npm i express mongoose cors nodemon
